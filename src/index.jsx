@@ -51,6 +51,9 @@ const HoneyTrap = () => {
       {/* navbar */}
       <div id="navbar-root">
         <nav className="navbar">
+
+        <img id="logo" src="logo1.png" alt="Honey Trap Logo"/>
+
           <div className="nav-items-container">
             <button id="home" className={`nav-item ${activeButton === 'home' ? 'active' : ''}`} onClick={() => handleButtonClick('home')}>Home</button>
             <button id="about" className={`nav-item ${activeButton === 'about' ? 'active' : ''}`} onClick={() => handleButtonClick('about')}>About</button>
@@ -59,6 +62,7 @@ const HoneyTrap = () => {
             <button id="submit-requests" className={`nav-item ${activeButton === 'submit-requests' ? 'active' : ''}`} onClick={() => handleButtonClick('submit-requests')}>Submit Requests</button>
             <button id="contact" className={`nav-item ${activeButton === 'contact' ? 'active' : ''}`} onClick={() => handleButtonClick('contact')}>Contact us</button>
           </div>
+
         </nav>
       </div>
 

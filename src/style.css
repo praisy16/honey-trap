@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
-html{
-  scroll-behavior: smooth;
-}
-
 
 .section {
-  scroll-margin-top: 100px; 
+  scroll-margin-top: 10px; 
 }
 
 
@@ -17,14 +13,13 @@ body {
 
 
 
-
-
 /* Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center; 
   position: fixed;
+  height: 45px;
   top: 0;
   left: 0;
   right: 0;
@@ -66,6 +61,22 @@ body {
 
 }
 
+#logo{
+  width:70px;
+  height: auto; 
+  margin-left:22px;
+  flex-shrink:0;
+}
+ 
+
+@media (max-width: 600px) {
+  #logo {
+    width: 50px; 
+    height: 50px;
+  }
+}
+
+
 
 #contact{
   padding: 15px 30px;
@@ -82,6 +93,7 @@ body {
   background-color: #262525;
   color: white; 
 }
+
 
 
 
@@ -167,8 +179,6 @@ body {
     padding: 0 40px;
   }
 }
-
-
 
 
 
