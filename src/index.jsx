@@ -52,7 +52,7 @@ const HoneyTrap = () => {
       <div id="navbar-root">
         <nav className="navbar">
 
-        <img id="logo" src="logo1.png" alt="Honey Trap Logo"/>
+        <img id="logo" src="logo1.png" alt="Honey Trap Logo" onClick={() => handleButtonClick('home')} />
 
           <div className="nav-items-container">
             <button id="home" className={`nav-item ${activeButton === 'home' ? 'active' : ''}`} onClick={() => handleButtonClick('home')}>Home</button>
