@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
-
 .section {
   scroll-margin-top: 10px; 
 }
-
 
 body {
   background-color: #FBF6E9;
@@ -12,12 +10,11 @@ body {
 }
 
 
-
 /* Navbar */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: space-between; 
   position: fixed;
   height: 45px;
   top: 0;
@@ -46,6 +43,8 @@ body {
   background-color: transparent; 
   cursor: pointer;
   transition: background-color 0.3s;
+  white-space: nowrap;
+
 }
 
 .nav-item:hover {
@@ -58,27 +57,92 @@ body {
   color: #444444;
   border-radius: 40px;
   border: 2px solid black;
-
 }
 
+
+
+
+
+/* hamburger icon (appears when screen is < 770px wide) */
+.hamburger {
+  position: absolute; 
+  top: 15px; 
+  right: 10px; 
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: none; 
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3.5px;
+  width: 100%;
+  background: #444444;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.hamburger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.hamburger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.hamburger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(50deg);
+  top: 0px;
+  left: 5px;
+}
+
+.hamburger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.hamburger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-50deg);
+  top: 20px;
+  left: 5px;
+}
+
+
+
+
+/* HoneyTrap logo in navbar */
 #logo{
   width:70px;
+  display:flex;
   height: auto; 
-  margin-left:22px;
+  margin-left:10px;
   cursor:pointer;
   flex-shrink:0;
 }
  
 
-@media (max-width: 600px) {
-  #logo {
-    width: 50px; 
-    height: 50px;
-  }
-}
 
-
-
+/* contact us in navbar */
 #contact{
   padding: 15px 30px;
   font-size: 0.875em;
@@ -88,16 +152,13 @@ body {
   cursor: pointer;
   border-radius: 20px; 
   transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
 #contact:hover{
   background-color: #262525;
   color: white; 
 }
-
-
-
-
 
 
 
@@ -114,7 +175,8 @@ body {
 
 .home-page h1 {
   font-size: 4.3em;
-  color: #333; 
+  letter-spacing: 2px;
+  color: #444444; 
   margin-bottom: 0.5em; 
 }
 
@@ -175,14 +237,6 @@ body {
   background-color:#f5db74;
 }
 
-@media (min-width: 768px) {
-  .get-started-bt {
-    padding: 0 40px;
-  }
-}
-
-
-
 
 
 
@@ -205,21 +259,6 @@ body {
   text-align: justify;
   margin-right: 500px;
 }
-
-
-
-
-@media (max-width: 600px) {
-  .about-page {
-      margin-top: 50px; 
-  }
-
-}
-
-
-
-
-
 
 
 /* disclaimer page */
@@ -280,6 +319,7 @@ body {
   padding-top: 20px;
   padding-bottom: 90px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
 }
 
 
@@ -298,15 +338,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
 }
 
 .form-group {
   margin-bottom: 15px;
-  width: 100%;
+  width: 90%;
 }
 
 .form-group label {
-  display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -357,6 +397,8 @@ body {
 ul{
   list-style: none;
 }
+
+/* footer (quick links) */
 .footer{
   background-color: #444444;
     padding: 70px 0;
@@ -364,6 +406,7 @@ ul{
 .footer-col{
    width: 25%;
    padding: 0 15px;
+   white-space: nowrap;
 }
 .footer-col h4{
   font-size: 18px;
@@ -424,7 +467,6 @@ ul{
   padding-top: 5px;
   justify-content: center;
   align-items: center;
- 
 }
 
 
@@ -448,15 +490,141 @@ ul{
 
 
 /*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: row; 
+    justify-content: space-between;
+    height: auto;
+    padding: 1px;
+  }
+
+  .nav-items-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item, #contact {
+    margin: 5px 0;
+  }
+
+  .home-page h1 {
+    font-size: 2.5em;
+  }
+
+  .about-page, .disclaimer-page, .database-page, .submit-requests-page {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: large;
+  }
+
+  .about-page p, .disclaimer-page p, .database-page p {
+    margin-right: 0;
+  }
+  
+  #logo {
+    width: 56px;  
+  }
+
 }
 
+/* Styles for screens from 601px to 773px */
+@media only screen and (min-width: 601px) and (max-width: 773px) {
+  
+  .home-page h1 {
+    font-size: 3em;
+  }
+
+  .about-page, .disclaimer-page, .database-page, .submit-requests-page {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: larger;
+  }
+
+  .about-page p, .disclaimer-page p, .database-page p {
+    margin-right: 100px;
+  }
+
+  .nav-item {
+    font-size: smaller;
+    height: 45px;
+    padding: 10px 8px;
+  }
+
+  .nav-item.active, .nav-item:hover, #contact, #contact:hover {
+    border-radius: 30px;
+    height: 45px;
+  }
+
+  #logo {
+    width: 58px;
+    margin-left: -2px;
+  }
+
+
+  .navbar {
+    height: auto; 
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 15px; 
+  }
+
+}
+
+/* Styles for screens up to 773px */
+@media only screen and (max-width: 773px) {
+ 
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-items-container {
+    display: none;
+    
+  }
+
+  
+  .nav-items-container.nav-active {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    height:290px;
+  }
+
+
+  /* Hide the logo when the hamburger menu is active */
+  .hamburger input[type="checkbox"]:checked ~ #logo {
+    display: none;
+  }
+
+
+  .nav-items-container.nav-active .nav-item {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/* Styles for screens above 769px */
+@media only screen and (min-width: 769px) {
+  .home-page h1 {
+    font-size: 4em;
+  }
+
+  .about-page, .disclaimer-page, .database-page, .submit-requests-page {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .about-page p, .disclaimer-page p, .database-page p {
+    margin-right: 300px;
+  }
+}
+
+
+
+@media only screen and (min-width: 1000px) {
+  .about-page p, .disclaimer-page p, .database-page p {
+    margin-right: 500px;
+  }
+}

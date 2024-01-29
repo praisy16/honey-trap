@@ -2,8 +2,19 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css'; 
 
+
+
 const HoneyTrap = () => {
   const [activeButton, setActiveButton] = useState('home'); 
+  const [navActive, setNavActive] = useState(false);
+
+
+  //handles navbar toggling
+  const toggleNav = () => {
+    setNavActive(!navActive);
+  };
+
+
 
   const handleButtonClick = (buttonId) => {
     setActiveButton(buttonId);
@@ -46,15 +57,38 @@ const HoneyTrap = () => {
 
   return (
     <div>
-
-
       {/* navbar */}
       <div id="navbar-root">
         <nav className="navbar">
 
-        <img id="logo" src="logo1.png" alt="Honey Trap Logo" onClick={() => handleButtonClick('home')} />
 
-          <div className="nav-items-container">
+          {/* Conditionally render the logo based on navActive state */}
+          {!navActive && (
+            <img 
+              id="logo" 
+              src="logo1.png" 
+              alt="Honey Trap Logo" 
+              onClick={() => handleButtonClick('home')} 
+            />
+          )}
+
+          {/* Hamburger menu icon (appears when screen is < 770px wide) */}
+          <label className="hamburger">
+            <input 
+              type="checkbox" 
+              id="burger" 
+              checked={navActive} 
+              onChange={toggleNav} 
+            />
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+
+
+          {/* Navigation items */}
+          <div className={`nav-items-container ${navActive ? 'nav-active' : ''}`}>
             <button id="home" className={`nav-item ${activeButton === 'home' ? 'active' : ''}`} onClick={() => handleButtonClick('home')}>Home</button>
             <button id="about" className={`nav-item ${activeButton === 'about' ? 'active' : ''}`} onClick={() => handleButtonClick('about')}>About</button>
             <button id="disclaimer" className={`nav-item ${activeButton === 'disclaimer' ? 'active' : ''}`} onClick={() => handleButtonClick('disclaimer')}>Disclaimer</button>
@@ -132,6 +166,8 @@ const HoneyTrap = () => {
      <div class="container">
       <div class="row">
        
+
+
         {/* footer column 1 */}
         <div class="footer-col">
           <h4>Quick Links</h4>
