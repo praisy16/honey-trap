@@ -114,7 +114,7 @@ const HoneyTrap = () => {
       {/* about page */}
       <div className="about-page" id="about-us-info">
         <h2>About HoneyTrap</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro similique, quae fugit nemo reiciendis quos expedita eos tempore odit facilis voluptas labore aliquam enim libero iure incidunt officiis possimus praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, sit in aliquam laborum quidem exercitationem tempore obcaecati at odio debitis facilis maiores minima asperiores accusantium odit, quam voluptatibus amet beatae?</p>
+        <p> start Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro similique, quae fugit nemo reiciendis quos expedita eos tempore odit facilis voluptas labore aliquam enim libero iure incidunt officiis possimus praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, sit in aliquam laborum quidem exercitationem tempore obcaecati at odio debitis facilis maiores minima asperiores accusantium odit, quam voluptatibus amet beatae?</p>
       </div>
 
 
