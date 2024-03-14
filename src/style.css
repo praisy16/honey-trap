@@ -169,15 +169,29 @@ body {
   padding-top: 180px; 
   text-align: left;
   padding-left: 50px; 
-  padding-bottom:180px;
-  position:relative;
+  padding-bottom: 180px;
+  position: relative;
+  background-image: url('pattern.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
 }
+
+/*.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  max-width: 400px;
+  margin-left: 20px;
+  opacity: 0.8;
+}*/
 
 
 .home-page h1 {
   font-size: 4.3em;
   letter-spacing: 2px;
-  color: #444444; 
+  color: #fff; 
   margin-bottom: 0.5em; 
 }
 

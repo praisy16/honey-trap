@@ -120,8 +120,10 @@ const HoneyTrap = () => {
   
        {/* home page */}
       <div className="home-page" id="home-info">
+        <div className='card'>
         <h1>HoneyTrap</h1>
         <button className="get-started-bt" onClick={() => handleButtonClick('about')}>Get Started  &#10132;</button>
+        </div>
       </div>
 
 
