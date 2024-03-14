@@ -43,6 +43,7 @@ body {
   background-color: transparent; 
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 40px;
   white-space: nowrap;
 
 }
@@ -168,15 +169,29 @@ body {
   padding-top: 180px; 
   text-align: left;
   padding-left: 50px; 
-  padding-bottom:180px;
-  position:relative;
+  padding-bottom: 180px;
+  position: relative;
+  background-image: url('pattern.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
 }
+
+/*.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  max-width: 400px;
+  margin-left: 20px;
+  opacity: 0.8;
+}*/
 
 
 .home-page h1 {
   font-size: 4.3em;
   letter-spacing: 2px;
-  color: #444444; 
+  color: #fff; 
   margin-bottom: 0.5em; 
 }
 
@@ -329,37 +344,12 @@ body {
   padding-top:10px;
   padding-bottom: 10px;
 }
-.submit-requests-page form {
-  font-size:0.7em;
-  padding-top:20px;
-  padding-bottom :20px;
-  max-width: 500px; 
-  margin-left: 20px; 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  
-}
 
-.form-group {
-  margin-bottom: 15px;
-  width: 90%;
-}
 
-.form-group label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.submit-button {
+/*
+------------------------------------------------------- LINK
+*/
+.redirect-button {
   background-color: #262525;
   color: white;
   padding: 10px 15px;
@@ -369,11 +359,12 @@ body {
   transition: background-color 0.3s;
 }
 
-.submit-button:hover {
+.redirect-button:hover {
   background-color: #555;
 }
-
-
+/*
+---------------------------------------------------------
+*/
 
 
 

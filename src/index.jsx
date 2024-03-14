@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import './style.css'; 
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Database from './database';
+import Subreq from './subreq';
+import './style.css';
 
 
 
 const HoneyTrap = () => {
+  
   const [activeButton, setActiveButton] = useState('home'); 
   const [navActive, setNavActive] = useState(false);
+
+  //modal handling
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
 
   //handles navbar toggling
@@ -105,8 +120,10 @@ const HoneyTrap = () => {
   
        {/* home page */}
       <div className="home-page" id="home-info">
+        <div className='card'>
         <h1>HoneyTrap</h1>
         <button className="get-started-bt" onClick={() => handleButtonClick('about')}>Get Started  &#10132;</button>
+        </div>
       </div>
 
 
@@ -114,7 +131,7 @@ const HoneyTrap = () => {
       {/* about page */}
       <div className="about-page" id="about-us-info">
         <h2>About HoneyTrap</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro similique, quae fugit nemo reiciendis quos expedita eos tempore odit facilis voluptas labore aliquam enim libero iure incidunt officiis possimus praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, sit in aliquam laborum quidem exercitationem tempore obcaecati at odio debitis facilis maiores minima asperiores accusantium odit, quam voluptatibus amet beatae?</p>
+        <p> This website's initiative is to combat online scams, specifically those targeting vulnerable individuals such as the elderly. The project aims to create a comprehensive defense tool against scammers by employing advanced AI technology and strategic engagement techniques. Through the creation of a simulated online persona, the system will infiltrate scammers, engaging them in conversations while gathering valuable intelligence. The primary purpose of this initiative is to disrupt scammer operations, delay their fraudulent activities, and provide critical data to law enforcement agencies. Users of this system, including ethical hackers, cybersecurity experts, and individuals passionate about online security, will employ the tool to actively counteract scams. This product will be a useful tool by helping vulnerable families to not be swindled by online thieves.</p>
       </div>
 
 
@@ -133,7 +150,8 @@ const HoneyTrap = () => {
      {/* database page */}
       <div className="database-page" id="database-info">
         <h2>Database</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sapiente aperiam rerum officiis perferendis possimus obcaecati inventore maiores autem deserunt rem, voluptatibus ullam maxime pariatur blanditiis velit eaque libero vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, temporibus, distinctio assumenda, magni atque soluta error repellendus nihil nemo provident quasi delectus quibusdam consequatur id velit quis doloribus quaerat doloremque?</p>
+        <p>Discover peace of mind with our Scammer Alert Database. Seamlessly integrated into our platform, this database features a comprehensive compilation of Facebook usernames associated with known scammers. Stay informed and protect yourself from fraudulent activities lurking in online spaces. Empower yourself to navigate the digital realm with confidence, armed with valuable insights into potential threats.</p>
+        <Link to="/database"><button type="button" className="redirect-button">Check</button></Link>
       </div>
 
 
@@ -144,17 +162,8 @@ const HoneyTrap = () => {
       <div className="submit-requests-page" id="submit-request-form">
         <h2>Submit a Request</h2>
         <p>We acknowledge that sometimes errors can occur, and names added to our database might be inaccurate. If you find that your name has been listed incorrectly or without justification, this is the place where you can request its removal. </p>
-        <form>
-          <div className="form-group">
-            <label htmlFor="userName">Name</label>
-            <input type="text" id="userName" name="userName" placeholder="Your name" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="userEmail">Email</label>
-            <input type="email" id="userEmail" name="userEmail" placeholder="Your email" />
-          </div>
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
+        <button className="redirect-button" onClick={openModal}>Make Claim</button>
+        <Subreq showModal={showModal} closeModal={closeModal} />
       </div>
 
 
@@ -207,4 +216,12 @@ const rootDiv = document.createElement('div');
 document.body.appendChild(rootDiv);
 
 const root = ReactDOM.createRoot(rootDiv);
-root.render(<HoneyTrap />);
+root.render(
+  <Router>
+    <Routes>
+      <Route exact path="/" element={<HoneyTrap />} />
+      <Route path="/database" element={<Database />} />
+      <Route path="/subreq" element={<Subreq />} />
+    </Routes>
+  </Router>
+);
