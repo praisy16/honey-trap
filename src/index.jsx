@@ -107,8 +107,13 @@ const HoneyTrap = () => {
             <button id="home" className={`nav-item ${activeButton === 'home' ? 'active' : ''}`} onClick={() => handleButtonClick('home')}>Home</button>
             <button id="about" className={`nav-item ${activeButton === 'about' ? 'active' : ''}`} onClick={() => handleButtonClick('about')}>About</button>
             <button id="disclaimer" className={`nav-item ${activeButton === 'disclaimer' ? 'active' : ''}`} onClick={() => handleButtonClick('disclaimer')}>Disclaimer</button>
-            <button id="database" className={`nav-item ${activeButton === 'database' ? 'active' : ''}`} onClick={() => handleButtonClick('database')}>Database</button>
-            <button id="submit-requests" className={`nav-item ${activeButton === 'submit-requests' ? 'active' : ''}`} onClick={() => handleButtonClick('submit-requests')}>Submit Requests</button>
+            <Link
+  to="/database"
+  className={`nav-item ${activeButton === 'database' ? 'active' : ''}`}
+  onClick={() => handleButtonClick('database')}
+>
+  Database
+</Link>
             <button id="contact" className={`nav-item ${activeButton === 'contact' ? 'active' : ''}`} onClick={() => handleButtonClick('contact')}>Contact us</button>
           </div>
 
