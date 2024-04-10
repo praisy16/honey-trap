@@ -317,6 +317,16 @@ body {
 }
 
 
+/* redirected db page from home*/
+.database-inner-page{
+  background-color:#F9E17E;
+  padding-top: 70px;
+  font-size:1.5em;
+  padding-bottom: 400px;
+  padding-left: 50px;
+}
+
+
 .database-page p{
   font-weight:lighter;
   font-size: 0.7em;
@@ -326,6 +336,39 @@ body {
 }
 
 
+.database-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.database-table th,
+.database-table td {
+  text-align: left;
+  padding: 8px;
+  font-size:.7em;
+  border-bottom: 1px solid #444444; 
+}
+
+.database-table th {
+  background-color: #444444; 
+  color: #ffffff; 
+  
+}
+
+.database-table tr:nth-child(even) {
+  background-color: #555; 
+}
+
+.database-table td a {
+  color: #2a7aeb; /* Color for links to make them stand out */
+  text-decoration: none; /* No underline for a cleaner look */
+}
+
+.database-table td a:hover {
+  text-decoration: underline; /* Underline on hover for link indication */
+}
 
 
 
