@@ -9,21 +9,15 @@ import './style.css';
 const Database = () => {
 
   const [activeButton, setActiveButton] = useState('home'); 
-  const [navActive, setNavActive] = useState(false);
+  const [navActive, setNavActive] = useState(false); 
+  const navigate = useNavigate();
 
-
- const navigate = useNavigate();
-
- const handleMain = () => {
-   navigate('/'); 
- };
-
- const handleContact = () => {
-  navigate('/subreq'); 
+ const handleButtonClick = (buttonId) => {
+  setActiveButton(buttonId); 
 };
 
 
- 
+
   return (
     <div>
     {/* navbar */}
@@ -37,29 +31,60 @@ const Database = () => {
             id="logo" 
             src="logo1.png" 
             alt="Honey Trap Logo" 
-            onClick={handleMain} 
-            />
+            onClick={() => navigate('/')}
+              />
         )}
 
    
 
-
         {/* Navigation items */}
         <div className={`nav-items-container ${navActive ? 'nav-active' : ''}`}>
-          <button id="home" className={`nav-item ${activeButton === 'home' ? 'active' : ''}`} onClick={() => handleButtonClick('home')}>Home</button>
-          <button id="about" className={`nav-item ${activeButton === 'about' ? 'active' : ''}`} onClick={() => handleButtonClick('about')}>About</button>
-          <button id="disclaimer" className={`nav-item ${activeButton === 'disclaimer' ? 'active' : ''}`} onClick={() => handleButtonClick('disclaimer')}>Disclaimer</button>
 
+        <Link
+        to="/"
+        className={`nav-item ${activeButton === 'home' ? 'active' : ''}`}
+        onClick={() => handleButtonClick('home')}
+      >
+        Home
+      </Link>
+      
+      
+      <Link
+        to="/"
+        className={`nav-item ${activeButton === 'about' ? 'active' : ''}`}
+        onClick={() => handleButtonClick('about')}
+      >
+        About
+      </Link>
+
+
+
+      <Link
+        to="/"
+        className={`nav-item ${activeButton === 'disclaimer' ? 'active' : ''}`}
+        onClick={() => handleButtonClick('disclaimer')}
+      >
+        Disclaimer
+      </Link>
           
 
-          <Link to="/database"
+         <Link to="/database"
               className={`nav-item ${activeButton === 'database' ? 'active' : ''}`}
               onClick={() => handleButtonClick('database')}>
               Database
           </Link>
           
-          <button id="contact" className={`nav-item ${activeButton === 'contact' ? 'active' : ''}`} onClick={() => handleContact}>Contact us</button>
-        </div>
+        
+        
+          <Link
+        to="/"
+        className={`nav-item ${activeButton === 'contact' ? 'active' : ''}`}
+        onClick={() => handleButtonClick('contact')}
+      >
+        Contact Us
+      </Link>
+       
+             </div>
 
       </nav>
     </div>
