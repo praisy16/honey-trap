@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
+
 import Database from './database';
 import Subreq from './subreq';
 import './style.css';
@@ -145,7 +147,7 @@ const HoneyTrap = () => {
       {/* disclaimer page */}
       <div className="disclaimer-page" id="disclaimer-info">
         <h2>Disclaimer</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro similique, quae fugit nemo reiciendis quos expedita eos tempore odit facilis voluptas labore aliquam enim libero iure incidunt officiis possimus praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, sit in aliquam laborum quidem exercitationem tempore obcaecati at odio debitis facilis maiores minima asperiores accusantium odit, quam voluptatibus amet beatae?</p>
+        <p>The primary objective is to identify potential scammers by engaging with them. Any accounts suspected of engaging in fraudulent activities will be documented in a scammer database. It is essential to recognize that engaging with scammers carries inherent risks, including potential exposure to deceptive or harmful content. Users are advised to exercise caution and discretion when interacting with unknown individuals online. This project is conducted for research and educational purposes only, and users engage with it at their own discretion and risk.</p>
       </div>
 
 
